@@ -1,0 +1,1 @@
+#Adm cadastra o xbox series x - > usuario loga na aplicação, adiciona produto na wish list, adiciona no carrinho, compra o produto -> Adm entra no app e verifica se diminuiu um do estoque 

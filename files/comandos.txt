@@ -1,0 +1,28 @@
+1. Para criar um novo projeto crie a pasta e dê:
+1.1. npm init (criar configuração do projeto node.js)
+
+2. O appium deve ser instalado localmente no projeto e não globalmente para isso entre na pasta pelo powershell  dê: 
+2.1.npm i appium@2.01
+
+3. Levantar servidor appium dê:
+3.1. npx appium 
+
+4. Derrubar servidor appium:
+4.1. Atalho Ctrl + C
+
+5. instalar o UiAutomaotr 2 driver no repositório
+5.1. npx appium driver install uiautomator2
+
+
+https://github.com/tejasbadone/flutterzon_bloc?tab=readme-ov-file
+
+
+User
+
+Email: user@email.com
+Password: 123456
+
+Admin
+
+Email: admin@email.com
+Password: 123456
