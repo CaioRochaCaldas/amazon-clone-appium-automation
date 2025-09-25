@@ -3,18 +3,23 @@ Automation of a mobile application clone of Amazon Shopping using Appium and Rob
 
 
 Screenshots
+SignIn & SignUp
+
+Splash
+
 Home
-<img width="857" height="978" alt="home" src="https://github.com/user-attachments/assets/246a2b25-5b4c-42ca-becd-cfdf27d09212" />
 
 Product
 
-Order
+SearchResult
 
-Order
-
-Cart
+WishList
 
 Cart
+
+Orders
+
+You
 
 Admin
 
