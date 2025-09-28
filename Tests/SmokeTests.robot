@@ -1,7 +1,7 @@
 *** Settings ***
-
 Resource    ../resources/base.resource
-Resource    ../screens/User/Home.robot
+Resource    ../screens/User/UserHome.robot
+Resource    ../screens/Adm/AdminHome.robot
 Resource    ../screens/User/You.robot
 Resource    ../screens/User/WishList.robot
 Resource    ../screens/User/Product.robot
@@ -9,8 +9,10 @@ Resource    ../screens/User/Cart.robot
 Resource    ../screens/User/Orders.robot
 Resource    ../screens/User/SearchResult.robot
 Resource    ../screens/Commons/SignIn_SignUp.robot
-Resource    ../screens/Commons/BottomNavigation.robot
+Resource    ../screens/User/UserBottomNavigation.robot
+Resource    ../screens/Adm/AdminBottomNavigation.robot
 Resource    ../screens/Commons/Splash.robot
+
 Library    BuiltIn
 Library    DateTime
 
@@ -27,7 +29,7 @@ Register User With Valid Data
     ...                  3. Submit the registration form.
     ...                  Expected Result: User is successfully registered and redirected to the Home Screen.
 
-    [Tags]               SignUp    Positive    
+    [Tags]               SignUp    Positive    Smoke
     Splash.Amazon Logo
     SignIn_SignUp.Register User Successfully    Welcome   Toby Watts     jason@gmail.com      123456
 
@@ -40,7 +42,7 @@ Login With Valid Credentials
 ...                  3. Click the "Continue" button.
 ...                  Expected Result: User is successfully logged in and redirected to the home Screen.
 
-    [Tags]    SignIn    Positive    
+    [Tags]    SignIn    Positive     Smoke   
     Splash.Amazon Logo
     SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
 
@@ -51,10 +53,10 @@ Logout User
     ...                  1. Navigate to the "You" Screen.
     ...                  2. Click the "Log Out" button.
     ...                  Expected Result: The user is logged out and redirected to the SignIn/SignUp Screen.
-    [Tags]               SignIn    Positive    
+    [Tags]               SignIn    Positive    Smoke
     Splash.Amazon Logo
     SignIn_SignUp.Login With Valid Credentials  teste123@gmail.com   123456
-    BottomNavigation.Menu You
+    UserBottomNavigation.Menu You
     You.Log Out User
     SignIn_SignUp.App returns to the Login Screen
 
@@ -67,10 +69,10 @@ Search Product By Valid Name
     ...                  1. Enter a valid product name in the search field.
     ...                  2. Initiate the search.
     ...                  Expected Result: The system displays the matching product(s) with correct details.
-    [Tags]    Positive    Search    Product
+    [Tags]    Positive    Search    Product    Smoke
         Splash.Amazon Logo
         SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
-        Home.Search Product        OnePlus
+        UserHome.Search Product        OnePlus
         SearchResult.Click First Search Result    OnePlus
  
 Add Product To Cart
@@ -81,12 +83,12 @@ Add Product To Cart
 ...                  2. Click the "Add to Cart" button.
 ...                  Expected Result: The product is added to the shopping cart, and the cart displays the correct quantity and product details.
 
-    [Tags]    Product    Cart    Positive
+    [Tags]    Product    Cart    Positive    Smoke
         Splash.Amazon Logo
         SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
-        Home.Select Deal of the Day Product
+        UserHome.Select Deal of the Day Product
         Product.Add product to cart
-        Home.Menu cart
+        USerHome.Menu cart
         Cart.Check Product in Cart
 
 Update Product Quantity In Cart
@@ -98,12 +100,12 @@ Update Product Quantity In Cart
     ...                  3. Apply the update.
     ...                  Expected Result: The product quantity is updated correctly, and the cart reflects the change accurately.
 
-     [Tags]    Product    Cart    Positive
+     [Tags]    Product    Cart    Positive    Smoke
         Splash.Amazon Logo
         SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
-        Home.Select Deal of the Day Product
+        UserHome.Select Deal of the Day Product
         Product.Add product to cart
-        Home.Menu cart
+        UserHome.Menu cart
         Cart.Check Product in Cart
         Cart.Changing Product Quantity
 
@@ -118,17 +120,17 @@ Purchase Product And Verify Order info
     ...                  3. Navigate to the order summary page.
     ...                  Expected Result: The order summary displays the correct product details.
 
-    [Tags]    Product    Cart    Positive    Order
+    [Tags]    Product    Cart    Positive    Order    Smoke
     Splash.Amazon Logo
     SignIn_SignUp.Login With Valid Credentials    jason@gmail.com    123456
-    Home.Select Deal of the Day Product
+    UserHome.Select Deal of the Day Product
     Product.Add product to cart
-    Home.Menu cart
+    UserHome.Menu cart
     Cart.Check Product in Cart
     Cart.Buy Product
     Cart.Adress    102     875 N Michigan Ave, John Hancock Center     60611    Chicago
     Cart.Pay With Google Pay
-    BottomNavigation.Menu You
+    UserBottomNavigation.Menu You
     ${Today}    Get Current Date    result_format=%B %d, %Y
     You.Your Orders
     Orders.Choose First Product      ${Today}       ₹39,999

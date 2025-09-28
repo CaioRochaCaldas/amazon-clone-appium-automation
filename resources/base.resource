@@ -1,6 +1,7 @@
 *** Settings ***
 
 Library     AppiumLibrary
+Library     OperatingSystem
 
 *** Variables ***
 
@@ -27,4 +28,8 @@ Close App
         Capture Page Screenshot
         Close Application  
 
-  
+Prepare Image File For Push
+    [Arguments]    ${local_path}    ${remote_path}
+    ${file_bytes}=    Get File    ${local_path}    mode=rb
+    ${file_base64}=    Evaluate    __import__("base64").b64encode(${file_bytes}).decode("utf-8")    modules=base64
+    Push File    ${remote_path}    ${file_base64}

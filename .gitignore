@@ -1,5 +1,7 @@
-#files
-/files
+files
+files/comandos
+files/comandos.txt
+files/info.txt
 
 # Logs
 logs

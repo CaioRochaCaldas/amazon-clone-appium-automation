@@ -65,106 +65,6 @@ Registration Rejected: Empty Name, Empty Email and Empty Password
     Wait Until Element Is Visible    ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_03}
     Element Attribute Should Match     ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_03}     content-desc    ${Error_Message_Value}
 
-Ro
-    [Arguments]          ${Welcome_Message_Value}   ${Input_FirstName_Value}      ${Input_Email_Value}      @{Input_Password_Value} 
-    
-    Wait Until Element Is Visible   ${raio_SignUp_CreateAccount}    60s
-    ${element}=    Get WebElement    ${raio_SignUp_CreateAccount}
-    ${is_checked}=    Get Element Attribute    ${element}    checked
-    Should Be Equal    ${is_checked}    true
-
-    #Wrong data: False,False,False    
-    Click Element        ${Btn_Create_account}
-
-    Wait Until Element Is Visible    ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_01}
-    Element Attribute Should Match      ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_01}  content-desc    This field cannot be empty
-
-    Wait Until Element Is Visible    ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_02}
-    Element Attribute Should Match      ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_02}  content-desc   This field cannot be empty
-
-    Wait Until Element Is Visible    ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_03}
-    Element Attribute Should Match     ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_03}     content-desc   This field cannot be empty
-
-    #Wrong data: True,False,False=empty
-    Click Element        ${Input_FirstAndLastName}     
-    Input Text           ${Input_FirstAndLastName}     ${Input_FirstName_Value}
-    Click Element        ${Btn_Create_account}
-
-    #Wrong data          False,True,False
-    Clear Text           ${Input_FirstAndLastName}    
-    Click Element        ${Input_Create_Email}   
-    Input Text           ${Input_Create_Email}         ${Input_Email_Value}  
-    Click Element        ${Btn_Create_account}
-
-    #Wrong data          False,False,True
-    
-    Clear Text           ${Input_Create_Email}  
-    Click Element        ${Input_SetPassword}    
-    Input Text           ${Input_SetPassword}          ${Input_Password_Value}[0]
-    Click Element        ${Btn_Create_account}
-
-    #Wrong data          True,true,False=empty
-    Click Element        ${Input_SetPassword} 
-    Clear Text           ${Input_SetPassword}    
-
-    Click Element        ${Input_FirstAndLastName}     
-    Input Text           ${Input_FirstAndLastName}     ${Input_FirstName_Value}
-    
-    Click Element        ${Input_Create_Email}   
-    Input Text           ${Input_Create_Email}         ${Input_Email_Value}  
-    
-    Click Element        ${Btn_Create_account}
-
-    #Wrong data          True,true,False=password<6
-    Click Element        ${Input_FirstAndLastName} 
-    Clear Text           ${Input_FirstAndLastName} 
-
-    Click Element        ${Input_FirstAndLastName}     
-    Input Text           ${Input_FirstAndLastName}     ${Input_FirstName_Value}
-
-    Click Element        ${Input_Create_Email}   
-    Clear Text           ${Input_Create_Email}
-    Click Element        ${Input_Create_Email}   
-    Input Text           ${Input_Create_Email}         ${Input_Email_Value}  
-    
-    Click Element        ${Input_SetPassword}    
-    Clear Text           ${Input_SetPassword} 
-    Click Element        ${Input_SetPassword}    
-    Input Text           ${Input_SetPassword}          ${Input_Password_Value}[1]
-
-    Click Element        ${Btn_Create_account}
-
-    #Wrong data          True,False,True
-    Click Element        ${Input_FirstAndLastName}     
-    Clear Text           ${Input_FirstAndLastName} 
-    Click Element        ${Input_FirstAndLastName}     
-    Input Text           ${Input_FirstAndLastName}     ${Input_FirstName_Value}
-    
-    Clear Text           ${Input_Create_Email}
-    
-    Click Element        ${Input_SetPassword}   
-    Clear Text           ${Input_SetPassword} 
-    Click Element        ${Input_SetPassword}    
-    Input Text           ${Input_SetPassword}          ${Input_Password_Value}[0]
-
-    Click Element        ${Btn_Create_account}
-
-    #Wrong data          False,True,True
-    Click Element        ${Input_FirstAndLastName} 
-    Clear Text           ${Input_FirstAndLastName} 
-
-    Click Element        ${Input_Create_Email}   
-    Clear Text           ${Input_Create_Email}
-    Click Element        ${Input_Create_Email}   
-    Input Text           ${Input_Create_Email}         ${Input_Email_Value}  
-    
-    Click Element        ${Input_SetPassword}    
-    Clear Text           ${Input_SetPassword} 
-    Click Element        ${Input_SetPassword}    
-    Click Element        ${Input_SetPassword}    
-    Input Text           ${Input_SetPassword}          ${Input_Password_Value}[0]
-
-    Click Element        ${Btn_Create_account}
 Registration Rejected: Valid Name,Invalid Email
     [Arguments]          ${Welcome_Message_Value}   ${Input_FirstName_Value}     ${Input_Password_Value} 
     
@@ -244,6 +144,7 @@ Login With Valid Credentials
     ${is_checked}=    Get Element Attribute    ${element}    checked
     Should Be Equal    ${is_checked}    true
 
+    Wait Until Element Is Visible  ${Input_SignIn_Email}    10s
     Click Element    ${Input_SignIn_Email}    
     Input Text       ${Input_SignIn_Email}      ${Input_Email_Value} 
 
