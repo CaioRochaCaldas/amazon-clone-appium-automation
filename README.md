@@ -19,11 +19,3 @@ Automation of a mobile application clone of Amazon Shopping using Appium and Rob
 <img width="900" height="700" alt="68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6474686c6a7a3131712f696d6167652f75706c6f61642f76313730313737383238302f61707025323073637265656e73686f74732f686e7a33737974686171346b64316a7732796a6c2e706e67" src="https://github.com/user-attachments/assets/febca091-8dd4-4c5f-989f-edd69b217930" />
 
 <img width="900" height="700" alt="68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6474686c6a7a3131712f696d6167652f75706c6f61642f76313730313737383237362f61707025323073637265656e73686f74732f756e6b7a6937357779687737647139366e7569732e706e67" src="https://github.com/user-attachments/assets/6b81661a-d201-4c94-a465-06dc4ef8490a" />
-
-## Contact
-* __Caio Rocha Caldas__
-
-<svg xmlns="http://www.w3.org/2000/svg" width="91" height="28" role="img" aria-label="LINKEDIN"/>
-<svg xmlns="http://www.w3.org/2000/svg" width="87.25" height="28" role="img" aria-label="GMAIL"/>
-
-feel free to contact me!
