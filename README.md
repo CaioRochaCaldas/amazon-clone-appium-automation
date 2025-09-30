@@ -5,6 +5,7 @@ Automation of a mobile application clone of Amazon Shopping using Appium and Rob
 Screenshots
 
 Splash
+<img width="323" height="727" alt="Captura de tela 2025-09-30 150051" src="https://github.com/user-attachments/assets/714ca42d-8148-4067-94f8-a994142f0f85" />
 
 SignIn & SignUp
 
@@ -39,4 +40,12 @@ You
 ![You](https://github.com/user-attachments/assets/5432a853-f8e8-4163-85d2-7ef29f5ae4b5)
 
 Admin
+
+Home
+<img width="327" height="724" alt="Captura de tela 2025-09-30 150214" src="https://github.com/user-attachments/assets/91ba3022-b3e9-47c2-8bc3-58992b71a7db" />
+
+Orders
+<img width="327" height="725" alt="Captura de tela 2025-09-30 150256" src="https://github.com/user-attachments/assets/33ddd656-a7ee-4b3f-901c-0902ee9293f5" />
+
+
 
