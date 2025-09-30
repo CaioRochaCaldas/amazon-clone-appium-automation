@@ -5,7 +5,7 @@ Automation of a mobile application clone of Amazon Shopping using Appium and Rob
 
 <img width="150" height="250" alt="ChatGPT Image 30_09_2025, 15_45_04" src="https://github.com/user-attachments/assets/73cf740a-1c29-4bae-8cbe-279b14da167d" /> 
 
-<img width="150" height="100" alt="robot" src="https://github.com/user-attachments/assets/a8cb85cd-e941-4e1a-a4f3-87e93d0d3606" />
+<img width="100" height="100" alt="robot" src="https://github.com/user-attachments/assets/a8cb85cd-e941-4e1a-a4f3-87e93d0d3606" />
 
 ## Screenshots
 * User
