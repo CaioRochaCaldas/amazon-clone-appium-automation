@@ -23,10 +23,8 @@ Automation of a mobile application clone of Amazon Shopping using Appium and Rob
 ## Contact
 * __Caio Rocha Caldas__
 ![68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c696e6b6564696e2532302d2532333030373742352e7376673f267374796c653d666f722d7468652d6261646765266c6f676f3d6c696e6b6564696e266c6f676f436f6c6f723d7768697465](https://github.com/user-attachments/assets/816a06da-18e9-4b1c-a600-0d78bcbb768c)
-<svg xmlns="http://www.w3.org/2000/svg" width="91" height="28" role="img" aria-label="LINKEDIN"><title>LINKEDIN</title><g shape-rendering="crispEdges"><rect width="91" height="28" fill="#0077b5"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="100"><text transform="scale(.1)" x="455" y="175" textLength="670" fill="#fff" font-weight="bold">LINKEDIN</text></g></svg>
-![Uploading 687
+<svg xmlns="http://www.w3.org/2000/svg" width="91" height="28" role="img" aria-label="LINKEDIN"/>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="87.25" height="28" role="img" aria-label="GMAIL"><title>GMAIL</title><g shape-rendering="crispEdges"><rect width="87.25" height="28" fill="#d14836"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="100"><image x="9" y="7" width="14" height="14" href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJ3aGl0ZSIgcm9sZT0iaW1nIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPkdtYWlsPC90aXRsZT48cGF0aCBkPSJNMjQgNS40NTd2MTMuOTA5YzAgLjkwNC0uNzMyIDEuNjM2LTEuNjM2IDEuNjM2aC0zLjgxOVYxMS43M0wxMiAxNi42NGwtNi41NDUtNC45MXY5LjI3M0gxLjYzNkExLjYzNiAxLjYzNiAwIDAgMSAwIDE5LjM2NlY1LjQ1N2MwLTIuMDIzIDIuMzA5LTMuMTc4IDMuOTI3LTEuOTY0TDUuNDU1IDQuNjQgMTIgOS41NDhsNi41NDUtNC45MSAxLjUyOC0xLjE0NUMyMS42OSAyLjI4IDI0IDMuNDM0IDI0IDUuNDU3eiIvPjwvc3ZnPg=="/><text transform="scale(.1)" x="536.25" y="175" textLength="432.5" fill="#fff" font-weight="bold">GMAIL</text></g></svg>47470733a2f2f696d672e736869656c64732e696f2f62616467652f476d61696c2d4431343833363f7374796c653d666f722d7468652d6261646765266c6f676f3d676d61696c266c6f676f436f6c6f723d7768697465.svg…]()
-
+<svg xmlns="http://www.w3.org/2000/svg" width="87.25" height="28" role="img" aria-label="GMAIL"/>
 
 feel free to contact me!
