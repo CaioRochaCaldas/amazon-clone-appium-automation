@@ -1,4 +1,4 @@
-![68747470733a2f2f696d672e736869656c64732e696f2f62616467652f476d61696c2d4431343833363f7374796c653d666f722d7468652d6261646765266c6f676f3d676d61696c266c6f676f436f6c6f723d7768697465](https://github.com/user-attachments/assets/1b68f87e-1cc9-4bc1-8c8e-253828e24d1e)# Amazon Clone Automation with Appium
+# Amazon Clone Automation with Appium
 Automation of a mobile application clone of Amazon Shopping using Appium and Robot Framework. Includes smoke, regression, and functional tests covering product search, adding items to the cart, managing the wishlist, account creation, adding delivery addresses, and navigating purchased orders. The project serves to demonstrate my skills as a test automation engineer, showcasing my knowledge and expertise in implementing effective mobile testing solutions.
 
 ## Tech Stack
@@ -22,9 +22,8 @@ Automation of a mobile application clone of Amazon Shopping using Appium and Rob
 
 ## Contact
 * __Caio Rocha Caldas__
-![68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c696e6b6564696e2532302d2532333030373742352e7376673f267374796c653d666f722d7468652d6261646765266c6f676f3d6c696e6b6564696e266c6f676f436f6c6f723d7768697465](https://github.com/user-attachments/assets/816a06da-18e9-4b1c-a600-0d78bcbb768c)
-<svg xmlns="http://www.w3.org/2000/svg" width="91" height="28" role="img" aria-label="LINKEDIN"/>
 
+<svg xmlns="http://www.w3.org/2000/svg" width="91" height="28" role="img" aria-label="LINKEDIN"/>
 <svg xmlns="http://www.w3.org/2000/svg" width="87.25" height="28" role="img" aria-label="GMAIL"/>
 
 feel free to contact me!
