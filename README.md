@@ -13,7 +13,7 @@ Automation of a mobile application clone of Amazon Shopping using Appium and Rob
 
 <img width="2443" height="1212" alt="68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6474686c6a7a3131712f696d6167652f75706c6f61642f76313730313737383237362f61707025323073637265656e73686f74732f6b786a77643070737664366a6d6d6878636664752e706e67" src="https://github.com/user-attachments/assets/ba53fc4c-6ccc-4e0f-b807-4c07b5736705" />
 
-<img src="https://github.com/user-attachments/assets/15c144b4-5d61-44e7-be5f-e7b0687aa5e4" alt="wishlist" width="600" />
+<img src="https://github.com/user-attachments/assets/15c144b4-5d61-44e7-be5f-e7b0687aa5e4" alt="wishlist" width="300" />
 
 
 * __Admin__
