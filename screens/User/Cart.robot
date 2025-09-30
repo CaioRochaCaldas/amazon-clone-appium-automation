@@ -46,8 +46,9 @@ Adress
     Click Element    ${Btn_OrderWithPlay}
 
 Pay With Google Pay
-    Wait Until Element Is Visible     ${Checkbox_I_AgreeWithGooglePay}
-    Click Element    ${Checkbox_I_AgreeWithGooglePay}
+    #Wait Until Element Is Visible     ${Checkbox_I_AgreeWithGooglePay}    100s
+    #Click Element    ${Checkbox_I_AgreeWithGooglePay}
+    Wait Until Element Is Visible     ${Btn_Pay}    100s
     Click Element    ${Btn_Pay} 
 
 

@@ -10,7 +10,7 @@ Resource    ../screens/User/Orders.robot
 Resource    ../screens/User/SearchResult.robot
 Resource    ../screens/Commons/SignIn_SignUp.robot
 Resource    ../screens/User/UserBottomNavigation.robot
-Resource    ../screens/Adm/AdminBottomNavigation.robot
+Resource    ../screens/Adm/AdminHeaderAndBottomNavigation.robot
 Resource    ../screens/Commons/Splash.robot
 
 Library    BuiltIn

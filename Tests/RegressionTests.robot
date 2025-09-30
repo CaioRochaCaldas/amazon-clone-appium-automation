@@ -47,6 +47,8 @@ Register User With Valid Data
     ...                  1. Navigate to the SignIn/SignUp Screen.
     ...                  2. Enter valid data in all required fields: name, email, and password.
     ...                  3. Submit the registration form.
+    ...                  4. Enter valid username and password.
+    ...                  5. Click the "Continue" button.
     ...                  Expected Result: User is successfully registered and redirected to the Home Screen.
 
     [Tags]               SignUp    Positive    Regression
@@ -386,6 +388,14 @@ Add Wishlist Product to Cart and Verify Removal from Wishlist
 
 
 Adm create product
+    [Documentation]  
+    [Tags]      Admin    Adm    
+        Splash.Amazon Logo
+        SignIn_SignUp.Login With Valid Credentials     admin@email.com    123456
+        AddProductWidget.Click Add Product Widget
+        AdminProduct.Create Product    ${Product_Name}   ${Product_ Description}   ${Product_Price}     ${Input_Quantity} 
+        AdminHome.Toast Product added successfully
+Adm delete product
     [Documentation]  
     [Tags]      Admin    Adm    
         Splash.Amazon Logo

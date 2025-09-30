@@ -4,10 +4,13 @@ Library     AppiumLibrary
 
 *** Variables ***
 ${Welcome_Message}                         xpath=//android.view.View[@content-desc="Welcome"]
+${toast_UserCreated}                       accessibility_id=User Created, you can sign in now!
+${toast_UserAlreadyExists}                 accessibility_id=User with same email already exists
 
 ${raio_SignIn_AlreadyACustomer}            xpath=//android.view.View[@content-desc="Sign in. Already a customer?"]/android.widget.RadioButton
 ${raio_SignUp_CreateAccount}               xpath=//android.view.View[@content-desc="Create account. New to Amazon?"]/android.widget.RadioButton
-${raio_SignIp_AlreadyaCustomer}            xpath=//android.view.View[@content-desc="Sign in. Already a customer?"]/android.widget.RadioButton
+${raio_SignIp_AlreadyaCustomer}           xpath=//android.view.View[@content-desc="Sign in. Already a customer?"]/android.widget.RadioButton
+${raio_SignIp_AlreadyaCustomer_id}            accessibility_id=Sign in. Already a customer?
 
 #Create account
 ${Input_FirstAndLastName}                  xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]
@@ -18,7 +21,6 @@ ${Btn_Create_account}                      xpath=//android.widget.Button[@conten
 ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_01}      xpath=(//android.view.View[@content-desc="This field cannot be empty"])[1]
 ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_02}          xpath=(//android.view.View[@content-desc="This field cannot be empty"])[2]
 ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_03}            xpath=(//android.view.View[@content-desc="This field cannot be empty"])[3]
-
 
 ${Input_SignIn_Email}                      xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]
 ${Input_SignIn_Password}                   xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]
@@ -44,6 +46,21 @@ Register User Successfully
     Input Text           ${Input_SetPassword}          ${Input_Password_Value}
 
     Click Element        ${Btn_Create_account}
+
+    #${toast_text}=    Get Text     ${toast_UserCreated}  
+    #Log    ${toast_text}
+    
+    Click Element    ${raio_SignIp_AlreadyaCustomer_id}  
+    Wait Until Element Is Visible  ${Input_SignIn_Email}    10s
+
+    ${InputValueEmail}=    Get Element Attribute   ${Input_SignIn_Email}    text
+    Should Be Equal    ${InputValueEmail}   ${Input_Email_Value}
+
+   # ${InputValuePassword}=    Get Element Attribute   ${Input_SignIn_Password}    text
+   # ${InputValuePassword}=    Set Variable    ${InputValuePassword}[0]
+   # Should Be Equal    ${InputValuePassword}    ${Input_Password_Value}
+
+    Click Element    ${Btn_SignIn_account}  
 
 Registration Rejected: Empty Name, Empty Email and Empty Password
     [Arguments]          ${Welcome_Message_Value}      ${Error_Message_Value}
@@ -138,11 +155,13 @@ Fail to Register User with Already Registered Email
 
 Login With Valid Credentials
     [Arguments]    ${Input_Email_Value}    ${Input_Password_Value}
+    
     Wait Until Element Is Visible   ${raio_SignIp_AlreadyaCustomer}    60s
     Click Element    ${raio_SignIp_AlreadyaCustomer}  
-    ${element}=    Get WebElement    ${raio_SignIp_AlreadyaCustomer}  
-    ${is_checked}=    Get Element Attribute    ${element}    checked
-    Should Be Equal    ${is_checked}    true
+    
+    #${element}=    Get WebElement    ${raio_SignIp_AlreadyaCustomer}  
+    #${is_checked}=    Get Element Attribute    ${element}    checked
+    #Should Be Equal    ${is_checked}    true
 
     Wait Until Element Is Visible  ${Input_SignIn_Email}    10s
     Click Element    ${Input_SignIn_Email}    

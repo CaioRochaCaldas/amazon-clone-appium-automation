@@ -3,7 +3,6 @@ Library     AppiumLibrary
 
 *** Variables ***
 ${Btn_WishList}                          accessibility_id:Wish List
-${Btn_Logout}                            accessibility_id:Log Out
 ${Btn_BuyAgain}                          accessibility_id:Buy Again
 ${Btn_YourOrders}                        xpath=//android.widget.Button[@content-desc="Your Orders"]
 ${First_Product_In_List}                 xpath=(//android.widget.ImageView)[1]
