@@ -2,9 +2,10 @@
 Automation of a mobile application clone of Amazon Shopping using Appium and Robot Framework. Includes smoke, regression, and functional tests covering product search, adding items to the cart, managing the wishlist, account creation, adding delivery addresses, and navigating purchased orders. The project serves to demonstrate my skills as a test automation engineer, showcasing my knowledge and expertise in implementing effective mobile testing solutions.
 
 #Tech Stack
-<img width="1176" height="396" alt="ChatGPT Image 30_09_2025, 15_45_04" src="https://github.com/user-attachments/assets/73cf740a-1c29-4bae-8cbe-279b14da167d" />
-<img width="524" height="287" alt="RobotFramework" src="https://github.com/user-attachments/assets/24ff1ebe-876c-43ba-9fed-f40b1b210c74" />
-
+<div style="display: flex; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/73cf740a-1c29-4bae-8cbe-279b14da167d" alt="ChatGPT Image" width="90%" />
+  <img src="https://github.com/user-attachments/assets/24ff1ebe-876c-43ba-9fed-f40b1b210c74" alt="RobotFramework" width="90%" />
+</div>
 
 #Screenshots
 * User
