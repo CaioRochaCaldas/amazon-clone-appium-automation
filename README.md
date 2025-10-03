@@ -56,7 +56,7 @@ https://github.com/user-attachments/assets/886fe69b-b9e3-47fd-9ae8-5406678df66b
 
 - Admin creates and deletes a product    
 
-## Screenshots
+## App Screenshots
 * __User__
 
 <img width="2443" height="1212" alt="68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6474686c6a7a3131712f696d6167652f75706c6f61642f76313730313737383238302f61707025323073637265656e73686f74732f7573376c793875773434707363637868796469782e706e67" src="https://github.com/user-attachments/assets/b121ca85-41e6-4156-ac6d-a6c1749f1db2" />
