@@ -1,7 +1,7 @@
 # Amazon Clone Automation with Appium
 Automation of a mobile application clone of Amazon Shopping using Appium and Robot Framework. Includes smoke, regression, and functional tests covering product search, adding items to the cart, managing the wishlist, account creation, adding delivery addresses, and navigating purchased orders. The project serves to demonstrate my skills as a test automation engineer, showcasing my knowledge and expertise in implementing effective mobile testing solutions.
 
-https://github.com/user-attachments/assets/80398651-5bf7-4e3a-94c7-7d6400d08dd8
+https://github.com/user-attachments/assets/886fe69b-b9e3-47fd-9ae8-5406678df66b
 
 ## Tech Stack
 
