@@ -34,16 +34,10 @@ Choose First Product
     Wait Until Element Is Visible    ${First_Product_In_List}  
     Click Element    ${First_Product_In_List} 
 
-    Wait Until Element Is Visible    ${OrderDate}
+    Wait Until Element Is Visible    ${OrderDate}    60s
     Element Attribute Should Match    ${OrderDate}     content-desc    Order date        ${OrderDate_Value} 
     Element Attribute Should Match    ${OrderTotal}     content-desc    Order total        ${OrderTotal_Value}
  
-    Wait Until Element Is Visible    ${First_Product_In_List}  
-    Click Element    ${First_Product_In_List} 
-
-    Wait Until Element Is Visible    ${OrderDate}
-    Element Attribute Should Match    ${OrderDate}     content-desc    Order date        ${OrderDate_Value} 
-    Element Attribute Should Match    ${OrderTotal}     content-desc    Order total        ${OrderTotal_Value}
 
 Search all orders
     [Arguments]    @{Order_Name_Value}

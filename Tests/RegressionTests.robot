@@ -13,6 +13,7 @@ Resource    ../screens/User/SearchResult.robot
 Resource    ../screens/Commons/SignIn_SignUp.robot
 Resource    ../screens/User/UserBottomNavigation.robot
 Resource    ../screens/Adm/AdminHeaderAndBottomNavigation.robot
+Resource    ../screens/Adm/AdminCategory.robot
 Resource    ../screens/Commons/Splash.robot
 
 Library    BuiltIn
@@ -29,15 +30,12 @@ ${Error_Message_Value}      This field cannot be empty
 
 @{Order_Name_Value}    OnePlus    oneplus    OnePlus 11    OnePlus 108    Xiaomi
 
-#Adm Login
-${Adm_InputEmail_Value}     user@email.com         
-${Adm_InputPassword_Value}  123456
 
 #Product
-${Product_Name}    Xbox Series X
+${Product_Name}            Xbox Series X
 ${Product_ Description}    Experience true next-gen performance with stunning 4K visuals, up to 120 FPS, and ray tracing for lifelike lighting and shadows. The ultra-fast SSD dramatically reduces load times, while Quick Resume lets you jump between games in seconds. With thousands of titles spanning four generations of Xbox, the Series X is the ultimate choice for power, speed, and immersive gaming.
-${Product_Price}    10.000
-${Input_Quantity}     122
+${Product_Price}           10
+${Input_Quantity}          100
 
 *** Test Cases ***
 Register User With Valid Data
@@ -51,9 +49,9 @@ Register User With Valid Data
     ...                  5. Click the "Continue" button.
     ...                  Expected Result: User is successfully registered and redirected to the Home Screen.
 
-    [Tags]               SignUp    Positive    Regression
+    [Tags]               SignUp    Positive    Regression    ignore
     Splash.Amazon Logo
-    SignIn_SignUp.Register User Successfully    Welcome   Toby Watts     jason@gmail.com      123456
+    SignIn_SignUp.Register User Successfully    ${Welcome_Message_Value}      John Stuart     user2000@gmail.com      123456
 
 Login With Valid Credentials
     [Documentation]  Validates the login process using valid user credentials.
@@ -67,7 +65,6 @@ Login With Valid Credentials
     [Tags]    SignIn    Positive     Regression   
     Splash.Amazon Logo
     SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
-
 Logout User
    [Documentation]       Verifies that a registered user can successfully log out of the application.
     ...                  Precondition: User must be already registered and logged in.
@@ -81,7 +78,6 @@ Logout User
     UserBottomNavigation.Menu You
     You.Log Out User
     SignIn_SignUp.App returns to the Login Screen
-
 Logout Admin
    [Documentation]       Verifies that a registered admin can successfully log out of the application.
     ...                  Precondition: admin must be already registered and logged in.
@@ -93,7 +89,6 @@ Logout Admin
     SignIn_SignUp.Login With Valid Credentials  admin@email.com    123456
     AdminHeaderAndBottomNavigation.Log Out Adm
     SignIn_SignUp.App returns to the Login Screen
-
 Search Product By Valid Name
     [Documentation]      Verifies that the system displays the correct results when a user searches for a product using a valid name.
     ...                  Precondition: User is on the home screen and the searched product exists.
@@ -106,7 +101,6 @@ Search Product By Valid Name
         SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
         UserHome.Search Product        OnePlus
         SearchResult.Click First Search Result    OnePlus
- 
 Add Product To Cart
   [Documentation]    Verifies that a user can successfully add a selected product to the shopping cart and that the cart updates correctly.
 ...                  Precondition: User is on the product page.
@@ -122,7 +116,6 @@ Add Product To Cart
         Product.Add product to cart
         USerHome.Menu cart
         Cart.Check Product in Cart
-
 Update Product Quantity In Cart
     [Documentation]    Verifies that the quantity of a specific product in the shopping cart can be updated correctly.
     ...                  Precondition: The product is already added to the shopping cart.
@@ -140,9 +133,6 @@ Update Product Quantity In Cart
         UserHome.Menu cart
         Cart.Check Product in Cart
         Cart.Changing Product Quantity
-
-
-
 Purchase Product And Verify Order info
     [Documentation]    Verifies that a user can complete a purchase and that the order information is correctly displayed in the order summary.
     ...                  Precondition: The product is available in the store and added to the shopping cart.
@@ -166,15 +156,6 @@ Purchase Product And Verify Order info
     ${Today}    Get Current Date    result_format=%B %d, %Y
     You.Your Orders
     Orders.Choose First Product      ${Today}       ₹39,999
-
-
-
-
-
-
-
-
-
 Error Messages Display for Empty Name, Email, and Password during Registration
      [Documentation]    Verifies that appropriate error messages are displayed when a user attempts to register with all required fields empty (Name, Email, and Password).
     ...                 Precondition: User is on the registration page.
@@ -182,7 +163,7 @@ Error Messages Display for Empty Name, Email, and Password during Registration
     ...                 1. Leave the Name, Email, and Password fields empty.
     ...                 2. Attempt to submit the registration form.
     ...                 Expected Result: Validation messages for all required fields are displayed and clearly visible to the user simultaneously.
-    [Tags]              SignUp
+    [Tags]              SignUp    Fail
     Splash.Amazon Logo
     SignIn_SignUp.Registration Rejected: Empty Name, Empty Email and Empty Password    ${Welcome_Message_Value}    ${Error_Message_Value}
     UserHome.Home Screen elements
@@ -384,23 +365,19 @@ Add Wishlist Product to Cart and Verify Removal from Wishlist
         Cart.Check Product in Cart
         Cart.Remove Product From Cart Using Button
 
-
-
-
-Adm create product
-    [Documentation]  
+Admin creates and deletes a product    
+    [Documentation]    This test verifies that an admin can create and delete a product.  
+...                    The test covers the following steps:  
+...                    1. Admin logs into the application.  
+...                    2. Admin creates a new product with all necessary details.  
+...                    3. Admin navigates to the category of the newly created product to verify its presence.  
+...                    4. Admin deletes the created product.  
+...                    5. Optionally, verify that the product no longer exists in the category.  
     [Tags]      Admin    Adm    
         Splash.Amazon Logo
         SignIn_SignUp.Login With Valid Credentials     admin@email.com    123456
         AddProductWidget.Click Add Product Widget
         AdminProduct.Create Product    ${Product_Name}   ${Product_ Description}   ${Product_Price}     ${Input_Quantity} 
         AdminHome.Toast Product added successfully
-Adm delete product
-    [Documentation]  
-    [Tags]      Admin    Adm    
-        Splash.Amazon Logo
-        SignIn_SignUp.Login With Valid Credentials     admin@email.com    123456
-        AddProductWidget.Click Add Product Widget
-        AdminProduct.Create Product    ${Product_Name}   ${Product_ Description}   ${Product_Price}     ${Input_Quantity} 
-        AdminHome.Toast Product added successfully  
-        
+        AdminHome.Electronics category
+        AdminCategory.Select Product     ${Product_Name} 

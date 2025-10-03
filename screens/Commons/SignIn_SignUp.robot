@@ -6,6 +6,7 @@ Library     AppiumLibrary
 ${Welcome_Message}                         xpath=//android.view.View[@content-desc="Welcome"]
 ${toast_UserCreated}                       accessibility_id=User Created, you can sign in now!
 ${toast_UserAlreadyExists}                 accessibility_id=User with same email already exists
+${toast_PasswordLessThan6}                 accessibility_id=Password must have at least 6 characters
 
 ${raio_SignIn_AlreadyACustomer}            xpath=//android.view.View[@content-desc="Sign in. Already a customer?"]/android.widget.RadioButton
 ${raio_SignUp_CreateAccount}               xpath=//android.view.View[@content-desc="Create account. New to Amazon?"]/android.widget.RadioButton
@@ -47,18 +48,13 @@ Register User Successfully
 
     Click Element        ${Btn_Create_account}
 
-    #${toast_text}=    Get Text     ${toast_UserCreated}  
-    #Log    ${toast_text}
-    
+    Wait Until Keyword Succeeds  5  0.5  Page Should Contain Element  ${toast_UserCreated}
+
     Click Element    ${raio_SignIp_AlreadyaCustomer_id}  
     Wait Until Element Is Visible  ${Input_SignIn_Email}    10s
 
     ${InputValueEmail}=    Get Element Attribute   ${Input_SignIn_Email}    text
     Should Be Equal    ${InputValueEmail}   ${Input_Email_Value}
-
-   # ${InputValuePassword}=    Get Element Attribute   ${Input_SignIn_Password}    text
-   # ${InputValuePassword}=    Set Variable    ${InputValuePassword}[0]
-   # Should Be Equal    ${InputValuePassword}    ${Input_Password_Value}
 
     Click Element    ${Btn_SignIn_account}  
 
@@ -125,6 +121,8 @@ Registration Rejected: Valid Name, Valid Email and Invalid Password less them 6
 
     Click Element        ${Btn_Create_account}
 
+    Wait Until Keyword Succeeds  5  0.5  Page Should Contain Element  ${toast_PasswordLessThan6}    
+    
     Page Should Not Contain Element   ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_01}
     Page Should Not Contain Element   ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_02}
     Page Should Not Contain Element   ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_03}
@@ -148,10 +146,13 @@ Fail to Register User with Already Registered Email
     Input Text           ${Input_SetPassword}          ${Input_Password_Value}
 
     Click Element        ${Btn_Create_account}
+    Wait Until Keyword Succeeds  5  0.5  Page Should Contain Element  ${toast_UserAlreadyExists}  
 
     Page Should Not Contain Element    ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_01}
     Page Should Not Contain Element   ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_02}
     Page Should Not Contain Element   ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_03}
+
+
 
 Login With Valid Credentials
     [Arguments]    ${Input_Email_Value}    ${Input_Password_Value}
