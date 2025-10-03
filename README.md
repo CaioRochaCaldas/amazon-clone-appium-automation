@@ -8,44 +8,49 @@ Automation of a mobile application clone of Amazon Shopping using Appium and Rob
 <img width="100" height="100" alt="robot" src="https://github.com/user-attachments/assets/a8cb85cd-e941-4e1a-a4f3-87e93d0d3606" />
 
 ## Test Cases
-- Regression
-  - Register User With Valid Data
+- EndToEnd
 
-  - Search Product By Valid Name
+- Register User With Valid Data
 
-  - Add Product To Cart
+- Logout User
 
-  - Update Product Quantity In Cart
+- Logout Admin
 
-  - Purchase Product And Verify Order info
+- Search Product By Valid Name
+    
+- Add Product To Cart
 
-  - Error Messages Display for Empty Name, Email, and Password during Registration
+- Update Product Quantity In Cart
 
-  - Invalid User Registration with Valid Name,Invalid Email
+- Purchase Product And Verify Order info
 
-  - Invalid User Registration with With Already Registered Email
+- Error Messages Display for Empty Name, Email, and Password during Registration
 
-  - Invalid User Registration with Valid Name, Valid Email and Invalid Password less them 6
+- Invalid User Registration with Valid Name,Invalid Email
 
-  - Search Product With Invalid Name
+- Invalid User Registration with With Already Registered Email
 
-  - Clear Product From Cart Using Button
+- Invalid User Registration with Valid Name, Valid Email and Invalid Password less them 6
 
-  - Clear Product From Cart Using Swipe
+- Search Product With Invalid Name
 
-  - Save Product for Later Button
+- Clear Product From Cart Using Button
 
-  - Save Product for later Swipe
+- Clear Product From Cart Using Swipe
 
-  - Search bought itens history
+- Save Product for Later Button
 
-  - Add Product To Wishlist
+- Save Product for later Swipe
 
-  - Remove Product From Wishlist
+- Search bought itens history
 
-  - Add Wishlist Product to Cart and Verify Removal from Wishlist
+- Add Product To Wishlist
 
-  - Admin creates and deletes a product    
+- Remove Product From Wishlist
+
+- Add Wishlist Product to Cart and Verify Removal from Wishlist
+
+- Admin creates and deletes a product    
 
 ## Screenshots
 * __User__
