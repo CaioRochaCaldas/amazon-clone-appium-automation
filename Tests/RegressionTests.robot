@@ -19,8 +19,8 @@ Resource    ../screens/Commons/Splash.robot
 Library    BuiltIn
 Library    DateTime
 
-Suite Setup       Start App
-Suite Teardown    Close App
+Test Setup       Start App
+Test Teardown    Close App
 
 *** Variables ***
 
@@ -29,6 +29,10 @@ ${Welcome_Message_Value}    Welcome
 ${Error_Message_Value}      This field cannot be empty
 
 @{Order_Name_Value}    OnePlus    oneplus    OnePlus 11    OnePlus 108    Xiaomi
+
+${User_Name}         John Stuart
+${User_Email}        user3013@email.com
+${User_Password}     123456
 
 
 #Product
@@ -48,47 +52,9 @@ Register User With Valid Data
     ...                  4. Enter valid username and password.
     ...                  5. Click the "Continue" button.
     ...                  Expected Result: User is successfully registered and redirected to the Home Screen.
-
-    [Tags]               SignUp    Positive    Regression    ignore
+    [Tags]               SignUp    Positive    Regression    
     Splash.Amazon Logo
-    SignIn_SignUp.Register User Successfully    ${Welcome_Message_Value}      John Stuart     user2000@gmail.com      123456
-
-Login With Valid Credentials
-    [Documentation]  Validates the login process using valid user credentials.
-...                  Precondition: User must be registered and not logged in.
-...                  Test Steps:
-...                  1. Navigate to the SignIn/SignUp Screen.
-...                  2. Enter valid username and password.
-...                  3. Click the "Continue" button.
-...                  Expected Result: User is successfully logged in and redirected to the home Screen.
-
-    [Tags]    SignIn    Positive     Regression   
-    Splash.Amazon Logo
-    SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
-Logout User
-   [Documentation]       Verifies that a registered user can successfully log out of the application.
-    ...                  Precondition: User must be already registered and logged in.
-    ...                  Test Steps:
-    ...                  1. Navigate to the "You" Screen.
-    ...                  2. Click the "Log Out" button.
-    ...                  Expected Result: The user is logged out and redirected to the SignIn/SignUp Screen.
-    [Tags]               SignIn    Positive    Regression    
-    Splash.Amazon Logo
-    SignIn_SignUp.Login With Valid Credentials  teste123@gmail.com   123456
-    UserBottomNavigation.Menu You
-    You.Log Out User
-    SignIn_SignUp.App returns to the Login Screen
-Logout Admin
-   [Documentation]       Verifies that a registered admin can successfully log out of the application.
-    ...                  Precondition: admin must be already registered and logged in.
-    ...                  Test Steps:
-    ...                  1. Click the "Log Out" button.
-    ...                  Expected Result: The admin is logged out and redirected to the SignIn/SignUp Screen.
-    [Tags]               SignIn    Positive    Regression    
-    Splash.Amazon Logo
-    SignIn_SignUp.Login With Valid Credentials  admin@email.com    123456
-    AdminHeaderAndBottomNavigation.Log Out Adm
-    SignIn_SignUp.App returns to the Login Screen
+    SignIn_SignUp.Register User Successfully    ${Welcome_Message_Value}      ${User_Name}     ${User_Email}      ${User_Password}  
 Search Product By Valid Name
     [Documentation]      Verifies that the system displays the correct results when a user searches for a product using a valid name.
     ...                  Precondition: User is on the home screen and the searched product exists.
@@ -97,25 +63,24 @@ Search Product By Valid Name
     ...                  2. Initiate the search.
     ...                  Expected Result: The system displays the matching product(s) with correct details.
     [Tags]    Positive    Search    Product    Regression
-        Splash.Amazon Logo
-        SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
-        UserHome.Search Product        OnePlus
-        SearchResult.Click First Search Result    OnePlus
+    Splash.Amazon Logo
+    SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
+    UserHome.Search Product        OnePlus
+    SearchResult.Click First Search Result    OnePlus
 Add Product To Cart
-  [Documentation]    Verifies that a user can successfully add a selected product to the shopping cart and that the cart updates correctly.
-...                  Precondition: User is on the product page.
-...                  Test Steps:
-...                  1. Select a product from the Deal of the Day.
-...                  2. Click the "Add to Cart" button.
-...                  Expected Result: The product is added to the shopping cart, and the cart displays the correct quantity and product details.
-
+    [Documentation]    Verifies that a user can successfully add a selected product to the shopping cart and that the cart updates correctly.
+    ...                  Precondition: User is on the product page.
+    ...                  Test Steps:
+    ...                  1. Select a product from the Deal of the Day.
+    ...                  2. Click the "Add to Cart" button.
+    ...                  Expected Result: The product is added to the shopping cart, and the cart displays the correct quantity and product details.
     [Tags]    Product    Cart    Positive    Regression
-        Splash.Amazon Logo
-        SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
-        UserHome.Select Deal of the Day Product
-        Product.Add product to cart
-        USerHome.Menu cart
-        Cart.Check Product in Cart
+    Splash.Amazon Logo
+    SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
+    UserHome.Select Deal of the Day Product
+    Product.Add product to cart
+    USerHome.Menu cart
+    Cart.Check Product in Cart
 Update Product Quantity In Cart
     [Documentation]    Verifies that the quantity of a specific product in the shopping cart can be updated correctly.
     ...                  Precondition: The product is already added to the shopping cart.
@@ -124,15 +89,14 @@ Update Product Quantity In Cart
     ...                  2. Change the product quantity increment and decrement.
     ...                  3. Apply the update.
     ...                  Expected Result: The product quantity is updated correctly, and the cart reflects the change accurately.
-
-     [Tags]    Product    Cart    Positive    Regression
-        Splash.Amazon Logo
-        SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com    123456
-        UserHome.Select Deal of the Day Product
-        Product.Add product to cart
-        UserHome.Menu cart
-        Cart.Check Product in Cart
-        Cart.Changing Product Quantity
+    [Tags]    Product    Cart    Positive    Regression
+    Splash.Amazon Logo
+    SignIn_SignUp.Login With Valid Credentials    user1927@email.com      ${User_Password}  
+    UserHome.Select Deal of the Day Product
+    Product.Add product to cart
+    UserHome.Menu cart
+    Cart.Check Product in Cart
+    Cart.Changing Product Quantity
 Purchase Product And Verify Order info
     [Documentation]    Verifies that a user can complete a purchase and that the order information is correctly displayed in the order summary.
     ...                  Precondition: The product is available in the store and added to the shopping cart.
@@ -141,7 +105,6 @@ Purchase Product And Verify Order info
     ...                  2. Complete the purchase process provide payment and delivery details.
     ...                  3. Navigate to the order summary page.
     ...                  Expected Result: The order summary displays the correct product details.
-
     [Tags]    Product    Cart    Positive    Order    Regression
     Splash.Amazon Logo
     SignIn_SignUp.Login With Valid Credentials    jason@gmail.com    123456
@@ -163,7 +126,7 @@ Error Messages Display for Empty Name, Email, and Password during Registration
     ...                 1. Leave the Name, Email, and Password fields empty.
     ...                 2. Attempt to submit the registration form.
     ...                 Expected Result: Validation messages for all required fields are displayed and clearly visible to the user simultaneously.
-    [Tags]              SignUp    Fail
+    [Tags]              SignUp    Fail    Regression
     Splash.Amazon Logo
     SignIn_SignUp.Registration Rejected: Empty Name, Empty Email and Empty Password    ${Welcome_Message_Value}    ${Error_Message_Value}
     UserHome.Home Screen elements
@@ -176,11 +139,10 @@ Invalid User Registration with Valid Name,Invalid Email
     ...                  3. Fill in the Password field with valid data.
     ...                  4. Attempt to submit the registration form.
     ...                  Expected Result: The system displays an appropriate error message for the Email field and prevents registration.
-    [Tags]               SignUp
+    [Tags]               SignUp  Fail  Regression
     Splash.Amazon Logo
     SignIn_SignUp.Registration Rejected: Valid Name,Invalid Email  ${Welcome_Message_Value}    Geralt        123456
     UserHome.Home Screen elements
-
 Invalid User Registration with With Already Registered Email
     [Documentation]      Verifies that the application prevents the creation of a new user account when the provided Email is already registered.
     ...                  Precondition: The system must already contain an account with the provided Email and the User is on the registration page.
@@ -190,8 +152,7 @@ Invalid User Registration with With Already Registered Email
     ...                  3. Fill in the Password field with valid data.
     ...                  4. Attempt to submit the registration form.
     ...                  Expected Result: The system displays an appropriate error message and prevents account duplication.
-
-    [Tags]             SignUp
+    [Tags]             SignUp  Fail  Regression
     Splash.Amazon Logo
     SignIn_SignUp.Fail to Register User with Already Registered Email  ${Welcome_Message_Value}    Mason    teste123@gmail.com      123456 
     UserHome.Home Screen elements
@@ -205,11 +166,10 @@ Invalid User Registration with Valid Name, Valid Email and Invalid Password less
     ...                  4. Attempt to submit the registration form.
     ...                  Expected Result: The system displays a validation message for the Password field and prevents account registration.
 
-    [Tags]             SignUp
+    [Tags]             SignUp    Fail  Regression
     Splash.Amazon Logo
     SignIn_SignUp.Registration Rejected: Valid Name, Valid Email and Invalid Password less them 6    ${Welcome_Message_Value}    Mason    tester1999@gmail.com      12345 
     UserHome.Home Screen elements
-
 Search Product With Invalid Name
    [Documentation]       Verifies that the system handles searches for invalid or non-existing product names appropriately.
     ...                  Precondition: User is on the home screen.
@@ -217,15 +177,11 @@ Search Product With Invalid Name
     ...                  1. Enter an invalid or non-existing product name in the search field.    
     ...                  2. Initiate the search.
     ...                  Expected Result: No products are displayed.
-    [Tags]    Negative    Search    Product
-        Splash.Amazon Logo
-        SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com   123456
-        UserHome.Search Product        plastation 5
-        SearchResult.No Products Found
-
-
-
-
+    [Tags]    Negative    Search    Product    Regression
+    Splash.Amazon Logo
+    SignIn_SignUp.Login With Valid Credentials     teste123@gmail.com   123456
+    UserHome.Search Product        plastation 5
+    SearchResult.No Products Found
 Clear Product From Cart Using Button
     [Documentation]    Verifies that a user can remove a product from the shopping cart and that the cart updates correctly.
     ...                  Precondition: The product is already added to the shopping cart.
@@ -233,14 +189,14 @@ Clear Product From Cart Using Button
     ...                  1. Locate the product in the shopping cart.
     ...                  2. Click the "Remove" button for the product.
     ...                  Expected Result: The product is removed from the cart, and the cart reflects the change.
-        [Tags]    Product    Cart    Positive
-        Splash.Amazon Logo
-        SignIn_SignUp.Login With Valid Credentials    teste123@gmail.com    123456
-        UserHome.Select Deal of the Day Product
-        Product.Add product to cart
-        UserHome.Menu cart
-        Cart.Check Product in Cart
-        Cart.Remove Product From Cart Using Button
+    [Tags]    Product    Cart    Positive    Regression
+    Splash.Amazon Logo
+    SignIn_SignUp.Login With Valid Credentials    teste123@gmail.com    123456
+    UserHome.Select Deal of the Day Product
+    Product.Add product to cart
+    UserHome.Menu cart
+    Cart.Check Product in Cart
+    Cart.Remove Product From Cart Using Button
 Clear Product From Cart Using Swipe
     [Documentation]    Verifies that a user can remove a product from the shopping cart using a swipe gesture and that the cart updates correctly.
     ...                  Precondition: The product is already added to the shopping cart.
@@ -248,14 +204,14 @@ Clear Product From Cart Using Swipe
     ...                  1. Locate the product in the shopping cart.
     ...                  2. Perform a swipe gesture to remove the product.
     ...                  Expected Result: The product is removed from the cart, and the cart reflects the change.
-        [Tags]    Product    Cart    Positive
-        Splash.Amazon Logo
-        SignIn_SignUp.Login With Valid Credentials    teste123@gmail.com    123456
-        UserHome.Select Deal of the Day Product
-        Product.Add product to cart
-        UserHome.Menu cart
-        Cart.Check Product in Cart
-        Cart.Remove Product From Cart Using Swipe
+    [Tags]    Product    Cart    Positive    Regression
+    Splash.Amazon Logo
+    SignIn_SignUp.Login With Valid Credentials    teste123@gmail.com    123456
+    UserHome.Select Deal of the Day Product
+    Product.Add product to cart
+    UserHome.Menu cart
+    Cart.Check Product in Cart
+    Cart.Remove Product From Cart Using Swipe
           
 Save Product for Later Button
     [Documentation]    Verifies that a user can move a product from the shopping cart to the "Save for Later" list.
@@ -264,7 +220,7 @@ Save Product for Later Button
     ...                  1. Locate the product in the shopping cart.
     ...                  2. Click the "Save for Later" button for the product.
     ...                  Expected Result: The product is removed from the cart and appears in the "Save for Later" list on the cart page.
-    [Tags]    Product    Cart    Positive
+    [Tags]    Product    Cart    Positive    Regression
     Splash.Amazon Logo
     SignIn_SignUp.Login With Valid Credentials    teste123@gmail.com    123456
     UserHome.Select Deal of the Day Product
@@ -280,8 +236,7 @@ Save Product for later Swipe
     ...                  1. Locate the product in the shopping cart.
     ...                  2. Perform a swipe gesture related to "Save for Later" option.
     ...                  Expected Result: The product is removed from the cart and appears in the "Save for Later" list on the cart page.
-
-    [Tags]    Product    Cart    Positive
+    [Tags]    Product    Cart    Positive    Regression
     Splash.Amazon Logo
     SignIn_SignUp.Login With Valid Credentials    teste123@gmail.com    123456
     UserHome.Select Deal of the Day Product
@@ -289,9 +244,6 @@ Save Product for later Swipe
     UserHome.Menu cart
     Cart.Check Product in Cart
     Cart.Saving product for later with swipe
-
-
-
 Search bought itens history
     [Documentation]    Verifies that a user can search for previously purchased items in the order history.
     ...                  Precondition: The user is logged in and has past orders in the order history.
@@ -300,13 +252,12 @@ Search bought itens history
     ...                  2. Enter the name of a previously purchased product in the search field.
     ...                  3. Initiate the search.
     ...                  Expected Result: The system displays the matching purchased item(s) in the order history with correct details.
-    [Tags]    Product    Cart    Positive    Order
+    [Tags]    Product    Cart    Positive    Order    Regression
     Splash.Amazon Logo
     SignIn_SignUp.Login With Valid Credentials    teste123@gmail.com    123456
     UserBottomNavigation.Menu You
     You.Your Orders
     Orders.Search all orders    @{Order_Name_Value}
-
 Add Product To Wishlist
     [Documentation]  Adds a selected product to the wishlist. 
     ...              Precondition: User must be logged in and product available in catalog.
@@ -314,11 +265,10 @@ Add Product To Wishlist
     ...              1. Navigate to the product page.
     ...              2. Click on "Add to Wishlist".
     ...              3. Verify success message is displayed.
-    ...              Expected Result: Product is successfully added to the wishlist and visible in the wishlist list.
- 
-    [Tags]    Product    Wishlist    Positive    
+    ...              Expected Result: Product is successfully added to the wishlist and visible in the wishlist list. 
+    [Tags]    Product    Wishlist    Positive    Regression
     Splash.Amazon Logo
-    SignIn_SignUp.Login With Valid Credentials     teste@gmail.com    123456
+    SignIn_SignUp.Login With Valid Credentials     ${User_Email}      ${User_Password}  
     UserHome.Select Deal of the Day Product
     Product.Add product to wishlist
     UserBottomNavigation.Menu You
@@ -333,15 +283,14 @@ Remove Product From Wishlist
     ...              3. Confirm removal if prompted.
     ...              Expected Result: Product is no longer displayed in the wishlist.
 
-    [Tags]    Product    Wishlist    Positive    
-        Splash.Amazon Logo
-        SignIn_SignUp.Login With Valid Credentials     teste@gmail.com    123456
-        UserHome.Select Deal of the Day Product
-        Product.Add product to wishlist
-        UserBottomNavigation.Menu You
-        You.Accessing wish list
-        WishList.Remove product From wishList
-
+    [Tags]    Product    Wishlist    Positive     Regression
+    Splash.Amazon Logo
+    SignIn_SignUp.Login With Valid Credentials     ${User_Email}      ${User_Password}  
+    UserHome.Select Deal of the Day Product
+    Product.Add product to wishlist
+    UserBottomNavigation.Menu You
+    You.Accessing wish list
+    WishList.Remove product From wishList
 Add Wishlist Product to Cart and Verify Removal from Wishlist
     [Documentation]  Moves a product from the wishlist to the cart and validates removal from wishlist.
     ...              Precondition: User must be logged in and have at least one product saved in the wishlist.
@@ -351,33 +300,32 @@ Add Wishlist Product to Cart and Verify Removal from Wishlist
     ...              3. Verify the product appears in the cart.
     ...              4. Return to the wishlist and check the product is no longer listed.
     ...              Expected Result: Product is successfully transferred to the cart and removed from the wishlist. 
-    [Tags]    Product  Wishlist   Cart    Positive    
-        Splash.Amazon Logo
-        SignIn_SignUp.Login With Valid Credentials     teste@gmail.com    123456
-        UserHome.Select Deal of the Day Product
-        Product.Add product to wishlist
-        UserBottomNavigation.Menu You
-        You.Accessing wish list
-        WishList.Add product From wishList To Cart
-        You.Accessing wish list
-        WishList.Check Wish List Is Empty
-        UserBottomNavigation.Menu cart
-        Cart.Check Product in Cart
-        Cart.Remove Product From Cart Using Button
-
+    [Tags]    Product  Wishlist   Cart    Positive     Regression
+    Splash.Amazon Logo
+    SignIn_SignUp.Login With Valid Credentials     ${User_Email}      ${User_Password}  
+    UserHome.Select Deal of the Day Product
+    Product.Add product to wishlist
+    UserBottomNavigation.Menu You
+    You.Accessing wish list
+    WishList.Add product From wishList To Cart
+    You.Accessing wish list
+    WishList.Check Wish List Is Empty
+    UserBottomNavigation.Menu cart
+    Cart.Check Product in Cart
+    Cart.Remove Product From Cart Using Button
 Admin creates and deletes a product    
     [Documentation]    This test verifies that an admin can create and delete a product.  
-...                    The test covers the following steps:  
-...                    1. Admin logs into the application.  
-...                    2. Admin creates a new product with all necessary details.  
-...                    3. Admin navigates to the category of the newly created product to verify its presence.  
-...                    4. Admin deletes the created product.  
-...                    5. Optionally, verify that the product no longer exists in the category.  
-    [Tags]      Admin    Adm    
-        Splash.Amazon Logo
-        SignIn_SignUp.Login With Valid Credentials     admin@email.com    123456
-        AddProductWidget.Click Add Product Widget
-        AdminProduct.Create Product    ${Product_Name}   ${Product_ Description}   ${Product_Price}     ${Input_Quantity} 
-        AdminHome.Toast Product added successfully
-        AdminHome.Electronics category
-        AdminCategory.Select Product     ${Product_Name} 
+    ...                The test covers the following steps:  
+    ...                1. Admin logs into the application.  
+    ...                2. Admin creates a new product with all necessary details.  
+    ...                3. Admin navigates to the category of the newly created product to verify its presence.  
+    ...                4. Admin deletes the created product.  
+    ...                5. Optionally, verify that the product no longer exists in the category.  
+    [Tags]      Admin    Adm    Regression
+    Splash.Amazon Logo
+    SignIn_SignUp.Login With Valid Credentials     admin@email.com    123456
+    AddProductWidget.Click Add Product Widget
+    AdminProduct.Create Product    ${Product_Name}   ${Product_ Description}   ${Product_Price}     ${Input_Quantity} 
+    AdminHome.Toast Product added successfully
+    AdminHome.Electronics category
+    AdminCategory.Select Product     ${Product_Name} 

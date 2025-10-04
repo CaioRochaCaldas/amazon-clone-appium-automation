@@ -20,8 +20,8 @@ Resource    ../screens/Commons/Splash.robot
 Library    BuiltIn
 Library    DateTime
 
-Suite Setup       Start App
-Suite Teardown    Close App
+Test Setup       Start App
+Test Teardown    Close App
 
 *** Variables ***
 

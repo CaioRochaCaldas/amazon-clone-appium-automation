@@ -14,29 +14,30 @@ ${raio_SignIp_AlreadyaCustomer}           xpath=//android.view.View[@content-des
 ${raio_SignIp_AlreadyaCustomer_id}            accessibility_id=Sign in. Already a customer?
 
 #Create account
-${Input_FirstAndLastName}                  xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]
-${Input_Create_Email}                      xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]
-${Input_SetPassword}                       xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[3]
+${Input_FirstAndLastName}                  xpath=(//android.widget.EditText)[1]
+${Input_Create_Email}                      xpath=(//android.widget.EditText)[2]
+${Input_SetPassword}                       xpath=(//android.widget.EditText)[3]
 ${Btn_Create_account}                      xpath=//android.widget.Button[@content-desc="Create account"]
 
 ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_01}      xpath=(//android.view.View[@content-desc="This field cannot be empty"])[1]
 ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_02}          xpath=(//android.view.View[@content-desc="This field cannot be empty"])[2]
 ${Text_Contentdesc_Input_ThisFieldCannotBeEmpty_03}            xpath=(//android.view.View[@content-desc="This field cannot be empty"])[3]
 
-${Input_SignIn_Email}                      xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]
-${Input_SignIn_Password}                   xpath=//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[2]
+${Input_SignIn_Email}                      xpath=(//android.widget.EditText)[1]
+${Input_SignIn_Password}                   xpath=(//android.widget.EditText)[2]
 ${Btn_SignIn_account}                      xpath=//android.widget.Button[@content-desc="Continue"]
 
 *** Keywords ***
 Register User Successfully
     [Arguments]          ${Welcome_Message_Value}   ${Input_FirstName_Value}      ${Input_Email_Value}      @{Input_Password_Value} 
     
-    Wait Until Element Is Visible   ${raio_SignUp_CreateAccount}    
+    Wait Until Element Is Visible   ${raio_SignUp_CreateAccount}        60s
     #Checking if radio button is selected
     ${element}=    Get WebElement    ${raio_SignUp_CreateAccount}
     ${is_checked}=    Get Element Attribute    ${element}    checked
     Should Be Equal    ${is_checked}    true
 
+    Wait Until Element Is Visible     ${Input_FirstAndLastName}       60s
     Click Element        ${Input_FirstAndLastName}     
     Input Text           ${Input_FirstAndLastName}     ${Input_FirstName_Value}
     

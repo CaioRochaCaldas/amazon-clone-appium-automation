@@ -3,6 +3,8 @@ files/comandos
 files/comandos.txt
 files/info.txt
 
+.env
+
 # Logs
 logs
 *.log
