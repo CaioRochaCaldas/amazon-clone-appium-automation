@@ -1,42 +1,72 @@
-# Appium Amazon Clone Automation
-Automation of a mobile application clone of Amazon Shopping using Appium and Robot Framework. Includes smoke, regression, and functional tests covering product search, adding items to the cart, managing the wishlist, account creation, adding delivery addresses, and navigating purchased orders. The project serves to demonstrate my skills as a test automation engineer, showcasing my knowledge and expertise in implementing effective mobile testing solutions.
+# Amazon Clone Automation with Appium
+This project is an automation of an Amazon Shopping mobile app clone using Appium and Robot Framework. It applies the Page Object Model (POM) design pattern to ensure maintainable and scalable test automation. The project includes smoke, regression, and E2E tests covering key user flows: product search, adding items to the cart, managing the wishlist, account creation, adding delivery addresses, and completing product purchases. It demonstrates my ability to design robust frameworks and implement effective mobile testing solutions.
 
+https://github.com/user-attachments/assets/886fe69b-b9e3-47fd-9ae8-5406678df66b
 
-Screenshots
+## Links
 
-Splash
+## Tech Stack
 
-SignIn & SignUp
+<img width="150" height="250" alt="ChatGPT Image 30_09_2025, 15_45_04" src="https://github.com/user-attachments/assets/73cf740a-1c29-4bae-8cbe-279b14da167d" /> 
 
-<img width="856" height="847" alt="Sign in Sign Up" src="https://github.com/user-attachments/assets/634ac403-4af7-45bb-b69c-65fcf648a3f4" />
+<img width="100" height="100" alt="robot" src="https://github.com/user-attachments/assets/a8cb85cd-e941-4e1a-a4f3-87e93d0d3606" />
 
-Home
+## Test Cases
+- EndToEnd
 
-<img width="416" height="799" alt="Home" src="https://github.com/user-attachments/assets/cb7da773-a5d5-4c15-8e2d-16363fd7640d" />
+- Register User With Valid Data
 
-Product
+- Logout User
 
-![Product](https://github.com/user-attachments/assets/8a8e25aa-5f9f-43b3-8e85-52e5fb85c7ef)
+- Logout Admin
 
-SearchResult
+- Search Product By Valid Name
+    
+- Add Product To Cart
 
-<img width="330" height="737" alt="Search" src="https://github.com/user-attachments/assets/1b145b60-5a13-444d-90a5-6b9bcfdbdd23" />
+- Update Product Quantity In Cart
 
-WishList
+- Purchase Product And Verify Order info
 
-<img width="331" height="736" alt="Wish list" src="https://github.com/user-attachments/assets/0d6fdcbd-c96d-4c30-be76-46afe59aab9b" />
+- Error Messages Display for Empty Name, Email, and Password during Registration
 
-Cart
+- Invalid User Registration with Valid Name,Invalid Email
 
-<img width="416" height="796" alt="01 cart " src="https://github.com/user-attachments/assets/06b2b194-528c-4897-a1ae-9116254eb4a8" />
+- Invalid User Registration with With Already Registered Email
 
-Orders
+- Invalid User Registration with Valid Name, Valid Email and Invalid Password less them 6
 
-<img width="417" height="792" alt="Orders" src="https://github.com/user-attachments/assets/5a6213ae-fac4-4a24-981b-c8e4a4392159" />
+- Search Product With Invalid Name
 
-You
+- Clear Product From Cart Using Button
 
-![You](https://github.com/user-attachments/assets/5432a853-f8e8-4163-85d2-7ef29f5ae4b5)
+- Clear Product From Cart Using Swipe
 
-Admin
+- Save Product for Later Button
 
+- Save Product for later Swipe
+
+- Search bought itens history
+
+- Add Product To Wishlist
+
+- Remove Product From Wishlist
+
+- Add Wishlist Product to Cart and Verify Removal from Wishlist
+
+- Admin creates and deletes a product    
+
+## App Screenshots
+* __User__
+
+<img width="2443" height="1212" alt="68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6474686c6a7a3131712f696d6167652f75706c6f61642f76313730313737383238302f61707025323073637265656e73686f74732f7573376c793875773434707363637868796469782e706e67" src="https://github.com/user-attachments/assets/b121ca85-41e6-4156-ac6d-a6c1749f1db2" />
+
+<img width="2443" height="1212" alt="68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6474686c6a7a3131712f696d6167652f75706c6f61642f76313730313737383237362f61707025323073637265656e73686f74732f6b786a77643070737664366a6d6d6878636664752e706e67" src="https://github.com/user-attachments/assets/ba53fc4c-6ccc-4e0f-b807-4c07b5736705" />
+
+<img src="https://github.com/user-attachments/assets/15c144b4-5d61-44e7-be5f-e7b0687aa5e4" alt="wishlist" width="300" />
+
+* __Admin__
+
+<img width="700" height="700" alt="68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6474686c6a7a3131712f696d6167652f75706c6f61642f76313730313737383238302f61707025323073637265656e73686f74732f686e7a33737974686171346b64316a7732796a6c2e706e67" src="https://github.com/user-attachments/assets/febca091-8dd4-4c5f-989f-edd69b217930" />
+
+<img width="900" height="700" alt="68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6474686c6a7a3131712f696d6167652f75706c6f61642f76313730313737383237362f61707025323073637265656e73686f74732f756e6b7a6937357779687737647139366e7569732e706e67" src="https://github.com/user-attachments/assets/6b81661a-d201-4c94-a465-06dc4ef8490a" />
