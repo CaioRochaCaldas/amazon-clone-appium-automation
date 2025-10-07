@@ -11,11 +11,11 @@ https://github.com/user-attachments/assets/886fe69b-b9e3-47fd-9ae8-5406678df66b
 
 Here are the full videos showcasing different types of test executions:
 
-- 🧩 **Regression Tests** — [Watch on YouTube](https://youtu.be/egsjiOAfBWE)  
-  Full validation of core system features to ensure everything works as expected after updates.
-
 - ⚡ **Smoke Tests** — [Watch on YouTube](https://youtu.be/XEeXdHEJ0cA)  
   Quick execution to verify that the main functionalities are working correctly before deeper testing.
+
+- 🧩 **Regression Tests** — [Watch on YouTube](https://youtu.be/egsjiOAfBWE)  
+  Full validation of core system features to ensure everything works as expected after updates.
 
 - 🚀 **End-to-End (E2E) Tests** — [Watch on YouTube](https://youtu.be/kmDlAZ7fWuU)  
   Complete flow covering both user and admin interactions.
