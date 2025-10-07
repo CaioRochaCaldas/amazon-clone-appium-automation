@@ -5,7 +5,7 @@ This project is an automation of an Amazon Shopping mobile app clone using Appiu
 
 Below is a short preview of an automated test run in action:
 
-![Test Execution Preview](https://github.com/user-attachments/assets/886fe69b-b9e3-47fd-9ae8-5406678df66b)
+https://github.com/user-attachments/assets/886fe69b-b9e3-47fd-9ae8-5406678df66b
 
 ## 🎬 Full Test Execution Demos
 
