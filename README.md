@@ -88,5 +88,6 @@ Here are the full videos showcasing different types of test executions:
 
 ## 🌐 Connect with me
 
-- [My LinkedIn](https://www.linkedin.com/in/caio-rocha-caldas-49970b1b2/?locale=en_US)
-- [My YouTube channel ](https://www.youtube.com/@caiorochacaldas)
+- [LinkedIn](https://www.linkedin.com/in/caio-rocha-caldas-49970b1b2/?locale=en_US)
+- [My YouTube channel](https://www.youtube.com/@caiorochacaldas)
+  [Github](github.com/CaioRochaCaldas)
